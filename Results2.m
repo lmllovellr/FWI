@@ -1,0 +1,20 @@
+function [Results,Score_HeD,Score_KL,Score_JS,f1,f2,f3]=Results2(F1,F2,F3)
+% inner=sum(Jourle,2);
+% for i=1:N
+% %     Fin1=FinHeDs{i};
+% %     Fin2=FinScore_KL{i};
+% %     Fin3=FinScore_JS{i};
+%    interHeD(i)=sum(sum(FinHeDs{i})); 
+%     interKL(i)=sum(sum(FinScore_KL{i})); 
+%     interJS(i)=sum(sum(FinScore_JS{i}));
+%    FinHeD(i)=inner(i)+interHeD(i);
+%    FinKL(i)=inner(i)+interKL(i);
+%    FinJS(i)=inner(i)+interJS(i);
+% end
+f1=sum(F1);
+f2=sum(F2);
+f3=sum(F3);
+[Score_HeD,id_FinHeD]=sort(f1,'descend');
+[Score_KL,id_FinKL]=sort(f2,'descend');
+[Score_JS,id_FinJS]=sort(f3,'descend');
+Results=[Score_HeD',id_FinHeD',Score_KL',id_FinKL',Score_JS',id_FinJS'];
